@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  database-srv:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_DB: sample_db
+      POSTGRES_USER: tester
+      POSTGRES_PASSWORD: myp4ssw0rd
+    volumes:
+      - ./script-db/:/home/scripts/
+
+  backup-srv:
+    build:
+      context: ./backup-srv
+    ports:
+      - "2222:22"
+    depends_on:
+      - database-srv
+    volumes:
+      - ./backup:/backup
+      - ./backup-srv/sshd_config:/etc/ssh/sshd_config
