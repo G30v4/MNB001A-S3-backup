@@ -7,7 +7,7 @@ Practical example for managing backups with rsync and crons
 
 ## Resource
 * [x] Dockerfiles Database
-* [ ] Database scripts
+* [x] Database scripts
 * [ ] Dockerfiles Backup server
 * [ ] Docker-compose file
 * [ ] Deploy file
