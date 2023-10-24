@@ -1,6 +1,9 @@
 #!/bin/bash
 mkdir -p backup
 
+# Create ssh automatically
+ssh-keygen -t ed25519 -f ./postgres/ssh_key2 -C "test" -q -N ""
+
 # buuld docker services
 docker compose -f docker-compose-backup.yml up -d --build --force-recreate
 

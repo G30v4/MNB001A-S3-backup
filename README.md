@@ -13,7 +13,16 @@ Practical example for managing backups with rsync and crons
 * [x] Deploy file
 
 ## Instructions
+> - Create **ssh key** in the specified directory for this case or is create by deploy.sh
+```
+> ssh-keygen -t ed25519 -f ./postgres/ssh_key -C "test"
+```
+
 > - Execute **deploy.sh**
+```
+> deploy.sh
+```
+
 > - Access the **database-srv container**
 
 ```
